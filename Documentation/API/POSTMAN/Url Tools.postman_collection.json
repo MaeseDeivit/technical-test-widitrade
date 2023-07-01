@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "26dc2a37-6126-4f98-8091-c9e06f3111bc",
+		"name": "Url Tools",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24773503",
+		"_collection_link": "https://martian-capsule-853058.postman.co/workspace/technical-test-widtrade~8d424b50-4155-4f19-a9ac-ffb4475c1b33/collection/24773503-26dc2a37-6126-4f98-8091-c9e06f3111bc?action=share&creator=24773503&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "POST Shoten Url",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{([])}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\" : \"https://example.com/12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_api_url}}v1/short-urls",
+					"host": [
+						"{{base_api_url}}v1"
+					],
+					"path": [
+						"short-urls"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\" : \"https://example.com/12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_api_url}}v1/short-urls",
+							"host": [
+								"{{base_api_url}}v1"
+							],
+							"path": [
+								"short-urls"
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 30 Jun 2023 12:26:50 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 30 Jun 2023 12:26:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"result\": \"https://tinyurl.com/2634hs2a\"\n}"
+				},
+				{
+					"name": "ERROR 500",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\" : \"https://example.com/12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_api_url}}v1/short-urls",
+							"host": [
+								"{{base_api_url}}v1"
+							],
+							"path": [
+								"short-urls"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 30 Jun 2023 11:10:14 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 30 Jun 2023 11:10:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"result\": {\n        \"errorCode\": 500,\n        \"errorMessage\": \"The token {[}] is not valid.\"\n    }\n}"
+				},
+				{
+					"name": "ERROR 9000",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_api_url}}v1/short-urls",
+							"host": [
+								"{{base_api_url}}v1"
+							],
+							"path": [
+								"short-urls"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 30 Jun 2023 07:26:10 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 30 Jun 2023 07:26:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"result\": {\n        \"errorCode\": 9000,\n        \"errorMessage\": \"The authorization header is required.\"\n    }\n}"
+				},
+				{
+					"name": "ERROR 9001",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_api_url}}v1/short-urls",
+							"host": [
+								"{{base_api_url}}v1"
+							],
+							"path": [
+								"short-urls"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 30 Jun 2023 07:26:59 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 30 Jun 2023 07:26:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.4"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"result\": {\n        \"errorCode\": 9001,\n        \"errorMessage\": \"The url field is required.\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
